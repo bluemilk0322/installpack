@@ -19,36 +19,33 @@
             </Sider>
             <Layout>
                 <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}"></Header>
-                <Content :style="{padding: '0 16px 16px'}">
-                    <Breadcrumb :style="{margin: '16px 0'}">
-                        <BreadcrumbItem>Home</BreadcrumbItem>
-                        <BreadcrumbItem>Components</BreadcrumbItem>
-                        <BreadcrumbItem>Layout</BreadcrumbItem>
-                    </Breadcrumb>
-                    <Card>
-                        <div style="height: 600px">Content</div>
-                    </Card>
+                <Content :style="{padding: '30px 30px 30px'}">
+                        <Context></Context>
                 </Content>
             </Layout>
         </Layout>
     </div>
 </template>
 <script>
-    export default {
-      data () {
-        return {
-          isCollapsed: false
-        }
-      },
-      computed: {
-        menuitemClasses: function () {
-          return [
-            'menu-item',
-            this.isCollapsed ? 'collapsed-menu' : ''
-          ]
-        }
-      }
+import Context from './page/Context.vue'
+export default {
+  components: {
+    Context
+  },
+  data () {
+    return {
+      isCollapsed: false
     }
+  },
+  computed: {
+    menuitemClasses: function () {
+      return [
+        'menu-item',
+        this.isCollapsed ? 'collapsed-menu' : ''
+      ]
+    }
+  }
+}
 </script>
 <style scoped>
     .layout-con{
